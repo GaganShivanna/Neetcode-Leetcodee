@@ -3,6 +3,9 @@ class Solution:
         rows, cols = len(grid), len(grid[0])
         visited = set()
 
+        if not grid:
+            return 0 
+
         #DFS/ BFS 
         def dfs(r,c):
             if (r not in range(rows) or 
