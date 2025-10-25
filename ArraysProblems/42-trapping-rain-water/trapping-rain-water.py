@@ -1,16 +1,16 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
-        l, r = 0, len(height) - 1
-        leftMax, rightMax = height[l], height[r]
+        left_pointer, right_pointer = 0, len(height)-1 
+        leftMax, rightMax = height[left_pointer],height[right_pointer]
         res = 0 
-        while l<r :
-            if leftMax < rightMax:
-                l += 1
-                leftMax = max(leftMax, height[l])
-                res += leftMax - height[l]
-            else: 
-                r -= 1
-                rightMax = max(rightMax, height[r])
-                res += rightMax - height[r]
 
+        while left_pointer < right_pointer: 
+            if leftMax < rightMax: 
+                left_pointer += 1
+                leftMax = max(leftMax, height[left_pointer])
+                res += leftMax - height[left_pointer]
+            else: 
+                right_pointer -= 1
+                rightMax = max(rightMax, height[right_pointer])
+                res += rightMax - height[right_pointer]
         return res
