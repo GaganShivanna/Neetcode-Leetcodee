@@ -1,6 +1,6 @@
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        prereq = {c : [] for c in range(numCourses)}
+        prereq = [[] for c in range(numCourses)]
         for crs, pre in prerequisites:
             prereq[crs].append(pre)
         
