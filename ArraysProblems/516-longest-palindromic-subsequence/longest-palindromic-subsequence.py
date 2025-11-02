@@ -6,11 +6,10 @@ class Solution:
         # Create DP table (LCS between s and s2)
         arr = [[0] * (n + 1) for _ in range(n + 1)]
 
-        for i in range(1, n + 1):
-            for j in range(1, n + 1):
-                if s[i - 1] == s2[j - 1]:
-                    arr[i][j] = 1 + arr[i - 1][j - 1]
+        for i in range(n - 1, -1, -1):
+            for j in range(n-1, -1, -1):
+                if s[i] == s2[j]:
+                    arr[i][j]= 1 + arr[i + 1][j + 1]
                 else:
-                    arr[i][j] = max(arr[i - 1][j], arr[i][j - 1])
-        
-        return arr[n][n]
+                    arr[i][j]= max(arr[i+1][j], arr[i][j+1])
+        return arr[0][0]
