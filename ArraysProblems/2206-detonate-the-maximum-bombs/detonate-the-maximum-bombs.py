@@ -8,8 +8,8 @@ class Solution:
             xi, yi, ri = bombs[i]
             radius = ri * ri 
             for j in range(n):
-                if i == j: 
-                    continue 
+                if i == j:
+                    continue
                 xj, yj, rj = bombs[j]
                 dx,dy = xi - xj, yi - yj 
                 if dx * dx + dy * dy <= radius : 
