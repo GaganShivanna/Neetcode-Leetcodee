@@ -6,11 +6,11 @@ class TimeMap:
     def set(self, key: str, value: str, timestamp: int) -> None:
         if key not in self.Map:
             self.Map[key] = []
-        self.Map[key].append([value, timestamp])
+        self.Map[key].append((value, timestamp))
 
     def get(self, key: str, timestamp: int) -> str:
         res = ""
-        values = self.Map.get(key,[])
+        values = self.Map.get(key,())
 
         l, r = 0, len(values) - 1
         while l <= r:
