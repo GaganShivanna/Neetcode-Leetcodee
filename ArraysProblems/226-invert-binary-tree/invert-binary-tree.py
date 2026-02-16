@@ -9,7 +9,6 @@ class Solution:
         if not root: 
             return 
         stack = [root]
-
         while stack: 
             nodes = stack.pop()
             nodes.left, nodes.right = nodes.right, nodes.left
