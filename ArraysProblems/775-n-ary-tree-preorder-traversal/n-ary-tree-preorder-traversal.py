@@ -8,14 +8,14 @@ class Node:
 
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
-        res = []
-        def helper(node):
-            if not node:
-                return
-            res.append(node.val)
+        result = []
 
-            for c in node.children:
-                helper(c)
-            
-        helper(root)
-        return res
+        def dfs(node):
+            if not node:
+                return 
+            result.append(node.val)
+            for child in node.children:
+                dfs(child)
+        dfs(root)
+        return result
+
