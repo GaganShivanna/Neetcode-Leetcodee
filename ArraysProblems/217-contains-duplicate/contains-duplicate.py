@@ -3,6 +3,6 @@ class Solution:
         records = set()
         for num in nums:
             if num in records:
-                return True 
+                return True
             records.add(num)
         return False
